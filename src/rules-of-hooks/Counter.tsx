@@ -1,6 +1,8 @@
-import React, { ReactElement, useEffect, useLayoutEffect, useRef, useState } from "react"
+import React, { ReactElement, useLayoutEffect, useRef, useState } from "react"
+import { useIsMounted } from "../hooks/useIsMounted"
 
 export function Counter(): ReactElement {
+  const isMounted = useIsMounted()
   const [counter, setCounter] = useState(0)
   const btnRef = useRef<HTMLButtonElement>(null)
 
